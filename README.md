@@ -23,7 +23,38 @@ Collections.shuffle(pookerNumber);
 ```
 * 发牌
   * 发牌功能,将牌编号,发给玩家集合,底牌集合
-  
+```ArrayList<Integer> player1 = new ArrayList<Integer>();
+                ArrayList<Integer> player1 = new ArrayList<Integer>();
+		ArrayList<Integer> player2 = new ArrayList<Integer>();
+		ArrayList<Integer> player3 = new ArrayList<Integer>();
+		ArrayList<Integer> bottom = new ArrayList<Integer>();
+		
+```
+  * 发牌采用的是集合索引%3
+```for(int i = 0 ; i < pookerNumber.size() ; i++){
+			//先将底牌做好
+			if(i < 3){
+				//存到底牌去
+				bottom.add( pookerNumber.get(i));
+			   //对索引%3判断
+			}else if(i % 3 == 0){
+				//索引上的编号,发给玩家1
+				player1.add( pookerNumber.get(i) );
+			}else if( i % 3 == 1){
+				//索引上的编号,发给玩家2
+				player2.add( pookerNumber.get(i) );
+			}else if( i % 3 == 2){
+				//索引上的编号,发给玩家3
+				player3.add( pookerNumber.get(i) );
+			}
+		}
+```
+
+  * 对玩家手中的编号排序
+```Collections.sort(player1);
+		Collections.sort(player2);
+		Collections.sort(player3);
+```		
 * 看牌
   * 看牌,将玩家手中的编号,到Map集合中查找,根据键找值
     * 定义方法实现
