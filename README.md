@@ -54,19 +54,22 @@ Collections.shuffle(pookerNumber);
 ```
 
   * 对玩家手中的编号排序
-```Collections.sort(player1);
+```             
+                Collections.sort(player1);
 		Collections.sort(player2);
 		Collections.sort(player3);
 ```		
 * 看牌
   * 看牌,将玩家手中的编号,到Map集合中查找,根据键找值
-``` look("刘德华",player1,pooker);
+```
+                look("刘德华",player1,pooker);
 		look("张曼玉",player2,pooker);
 		look("林青霞",player3,pooker);
 		look("底牌",bottom,pooker);
 ```
-    * 定义方法实现
-```public static void look(String name,ArrayList<Integer> player,HashMap<Integer,String> pooker){
+  * 定义方法实现
+```    
+public static void look(String name,ArrayList<Integer> player,HashMap<Integer,String> pooker){
 		//遍历ArrayList集合,获取元素,作为键,到集合Map中找值
 		System.out.print(name+" ");
 		for(Integer key : player){
